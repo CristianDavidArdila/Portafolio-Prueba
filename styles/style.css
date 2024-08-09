@@ -1,0 +1,144 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Definir variables de colores y fuentes usando :root */
+/* :root es un selector de CSS que se refiere al elemento más alto del árbol DOM, es decir, el elemento <html> */
+:root {
+    /* Definición de variables de colores */
+    --color-primario: #000000; /* Negro: Se usará como color de fondo principal */
+    --color-secundario: #F6F6F6; /* Blanco: Se usará como color de texto principal */
+    --color-terciario: #22D4FD; /* Azul: Se usará para resaltar elementos */
+    --color-hover: #272727; /* Gris oscuro: Se usará para los estados hover de ciertos elementos */
+
+    /* Definición de variables de fuentes */
+    --fuente-monserrat: "Montserrat", sans-serif; /* Fuente Montserrat: Se usará como fuente principal */
+    --fuente-Krona: "Krona One", sans-serif; /* Fuente Krona One: Se usará para títulos y subtítulos */
+}
+
+
+/* Aplicar padding y margen cero a todos los elementos */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--color-primario); /* Fondo negro */
+    color: var(--color-secundario); /* Texto en color blanco */
+    box-sizing: border-box; /* Incluir padding y borde en el tamaño total de los elementos */
+}
+
+.header {
+    padding: 2% 0% 0% 10%; /* Padding superior y a la izquierda */
+}
+
+.header__menu {
+    display: flex; /* Usar flexbox para el diseño del menú */
+    gap: 80px; /* Espacio entre los elementos del menú */
+}
+
+.header__menu__link {
+    font-family: var(--fuente-monserrat); /* Fuente Montserrat */
+    font-weight: 600; /* Peso de fuente */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    color: var(--color-terciario); /* Color de texto azul */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.presentacion {
+    display: flex; /* Usar flexbox para el diseño de la sección */
+    align-items: center; /* Alinear elementos al centro verticalmente */
+    justify-content: space-between; /* Espacio entre los elementos */
+    padding: 6% 10%; /* Padding en la sección */
+    gap: 82px; /* Espacio entre el contenido y la imagen */
+}
+
+.presentacion__contenido {
+    width: 50%; /* Ancho fijo */
+    display: flex; /* Usar flexbox para el diseño del contenido */
+    flex-direction: column; /* Direccionar elementos en columna */
+    gap: 40px; /* Espacio entre los elementos */
+}
+
+.presentacion__contenido__titulo {
+    font-family: var(--fuente-Krona); /* Fuente Krona One */
+    font-size: 2.25rem; /* Tamaño de fuente */
+}
+
+.titulo-destaque {
+    color: var(--color-terciario); /* Color azul */
+}
+
+.presentacion__contenido__texto {
+    font-family: var(--fuente-monserrat); /* Fuente Montserrat */
+    font-weight: 400; /* Peso de fuente */
+    font-size: 1.5rem; /* Tamaño de fuente */
+}
+
+.presentacion__enlaces {
+    display: flex; /* Usar flexbox para el diseño de los enlaces */
+    justify-content: space-between; /* Espacio entre los enlaces */
+    flex-direction: column; /* Direccionar elementos en columna */
+    align-items: center; /* Alinear elementos al centro */
+    gap: 32px; /* Espacio entre los elementos */
+}
+
+.presentacion__enlaces__subtitulo {
+    font-family: var(--fuente-Krona); /* Fuente Krona One */
+    font-weight: 400; /* Peso de fuente */
+    font-size: 1.5rem; /* Tamaño de fuente */
+}
+
+.presentacion__enlaces__link {
+    width: 50%; /* Ancho fijo */
+    text-align: center; /* Alinear texto al centro */
+    padding: 21.5px 0; /* Padding superior e inferior */
+    border-radius: 8px; /* Bordes redondeados */
+    font-family: var(--fuente-monserrat); /* Fuente Montserrat */
+    font-weight: 600; /* Peso de fuente */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    color: var(--color-secundario); /* Color de texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    border: 2px solid var(--color-terciario); /* Borde azul */
+    display: flex; /* Usar flexbox para el diseño del enlace */
+    justify-content: center; /* Alinear elementos al centro */
+    gap: 16px; /* Espacio entre los elementos */
+}
+
+.presentacion__enlaces__link:hover {
+    background-color: var(--color-hover); /* Fondo gris oscuro */
+}
+
+.presentacion__imagen {
+    width: 50%; /* Ancho fijo de 50% del contenedor */
+}
+
+footer {
+    background-color: var(--color-terciario); /* Fondo azul */
+    padding: 24px; /* Padding */
+    color: var(--color-primario); /* Color de texto negro */
+    text-align: center; /* Alinear texto al centro */
+    font-family: var(--fuente-monserrat); /* Fuente Montserrat */
+    font-weight: 400; /* Peso de fuente */
+    font-size: 1.5rem; /* Tamaño de fuente */
+}
+
+/* Estilos responsivos para pantallas con un ancho máximo de 1250px */
+@media (max-width: 1250px) {
+    .header {
+        padding: 10%; /* Ajustar el padding del encabezado */
+    }
+
+    .header__menu {
+        justify-content: center; /* Centrar el menú */
+    }
+
+    .presentacion {
+        flex-direction: column-reverse; /* Cambiar la dirección del flexbox a columna inversa */
+        padding: 5%;
+    }
+
+    .presentacion__contenido {
+        width: auto; /* Ajustar el ancho automáticamente basado en el contenido */
+    }
+}
